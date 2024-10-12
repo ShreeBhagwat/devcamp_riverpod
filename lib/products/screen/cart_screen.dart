@@ -20,6 +20,7 @@ class CartScreen extends ConsumerWidget {
             ? ListView.separated(
                 itemBuilder: (context, index) {
                   return ListTile(
+                    leading: Image.network(cartList[index].images!.first),
                     title: Text(cartList[index].title.toString()),
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
