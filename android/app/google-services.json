@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "145862885966",
+    "project_id": "fir-ecom-8f425",
+    "storage_bucket": "fir-ecom-8f425.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145862885966:android:00502690a269e48605791f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_riverpod"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-JXXffyCqS8oriBhbWkTtMfmQeW51P1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

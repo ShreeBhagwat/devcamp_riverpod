@@ -25,7 +25,6 @@ class Products {
   int? minimumOrderQuantity;
   List<dynamic>? images;
   String? thumbnail;
-  
 
   Products({
     this.id,
@@ -53,4 +52,6 @@ class Products {
 
   factory Products.fromJson(Map<String, dynamic> json) =>
       _$ProductsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ProductsToJson(this);
 }
