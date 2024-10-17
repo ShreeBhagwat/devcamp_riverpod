@@ -53,4 +53,6 @@ class Products {
 
   factory Products.fromJson(Map<String, dynamic> json) =>
       _$ProductsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ProductsToJson(this);    
 }
