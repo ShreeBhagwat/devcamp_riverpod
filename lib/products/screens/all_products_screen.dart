@@ -13,7 +13,7 @@ class AllProductsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<List<Products>> products =
-        ref.watch(productsFutureProvider);
+        ref.watch(productsFutureProvider('1'));
     return Scaffold(
       appBar: AppBar(
         title: Text('All Products'),

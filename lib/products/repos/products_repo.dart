@@ -5,7 +5,14 @@ import 'package:flutter_riverpod_1/auth/firebase_constants.dart';
 import 'package:flutter_riverpod_1/products/models/products.dart';
 import 'package:flutter_riverpod_1/networking/api_endpoints.dart';
 import 'package:flutter_riverpod_1/networking/dio_client.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+part 'products_repo.g.dart';
+
+@Riverpod(keepAlive: true)
+ProductsRepo productsRepo(ProductsRepoRef ref) {
+  return ProductsRepo(ref);
+}
 class ProductsRepo {
   final Ref ref;
   ProductsRepo(this.ref);
@@ -71,4 +78,4 @@ class ProductsRepo {
   }
 }
 
-final productsRepoProvider = Provider((ref) => ProductsRepo(ref));
+// final productsRepoProvider = Provider((ref) => ProductsRepo(ref));

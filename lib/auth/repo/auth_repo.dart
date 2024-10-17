@@ -1,9 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod_1/auth/firebase_constants.dart';
 import 'package:flutter_riverpod_1/auth/model/app_user.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+part 'auth_repo.g.dart';
+
+@Riverpod(keepAlive: true)
+AuthRepo authRepo(AuthRepoRef ref) {
+  return AuthRepo();
+}
 
 class AuthRepo {
   Future signInWithEmailAndPassword(
@@ -13,7 +18,7 @@ class AuthRepo {
           .signInWithEmailAndPassword(email: email, password: password);
 
       if (userCredential.user != null) {
-        // return user here 
+        // return user here
         return userCredential.user;
       } else {
         return Future.error('Failed to login');
@@ -58,4 +63,4 @@ class AuthRepo {
   }
 }
 
-final authRepoProvider = Provider((ref) => AuthRepo());
+// final authRepoProvider = Provider((ref) => AuthRepo());

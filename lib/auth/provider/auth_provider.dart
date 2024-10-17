@@ -1,7 +1,7 @@
 import 'dart:developer';
-
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod_1/auth/repo/auth_repo.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+part 'auth_provider.g.dart';
 
 enum AuthStatus { initial, loading, authenticated, unauthenticated, error }
 
@@ -12,10 +12,11 @@ extension AuthStatusX on AuthStatus {
   bool get isError => this == AuthStatus.error;
 }
 
-final authProvider =
-    NotifierProvider<AuthProvider, AuthStatus>(() => AuthProvider());
+// final authProvider =
+//     NotifierProvider<AuthProvider, AuthStatus>(() => AuthProvider());
 
-class AuthProvider extends Notifier<AuthStatus> {
+@Riverpod()
+class Auth extends _$Auth {
   @override
   AuthStatus build() {
     return AuthStatus.initial;
